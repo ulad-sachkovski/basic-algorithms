@@ -23,34 +23,34 @@ public class CheckParantheses {
 }
 
 class Patenthneses {
-    private Character c;
-    private int i;
+    private Character character;
+    private int index;
     private Patenthneses(Character c, Integer i) {
-        this.c = c;
-        this.i = i;
+        this.character = c;
+        this.index = i;
     }
 
     public Character getC() {
-        return this.c;
+        return this.character;
     }
 
-    public int getI() {
-        return this.i;
+    public int getIndex() {
+        return this.index;
     }
 
     public static String check(List<Character> opening, List<Character> closing, char[] lineChar) {
         Stack<Patenthneses> stack = new Stack<>();
-        int i = 0;
+        int index = 0;
         try {
             for (Character x : lineChar) {
-                i++;
+                index++;
                 if (opening.contains(x)) {
-                    stack.push(new Patenthneses(x, i));
+                    stack.push(new Patenthneses(x, index));
                 } else if (closing.contains((x))) {
-                    if (stack.empty()) return Integer.toString(i);
-                    else if (x == '}' && stack.peek().getC() != '{') return Integer.toString(i);
-                    else if (x == ')' && stack.peek().getC() != '(') return Integer.toString(i);
-                    else if (x == ']' && stack.peek().getC() != '[') return Integer.toString(i);
+                    if (stack.empty()) return Integer.toString(index);
+                    else if (x == '}' && stack.peek().getC() != '{') return Integer.toString(index);
+                    else if (x == ')' && stack.peek().getC() != '(') return Integer.toString(index);
+                    else if (x == ']' && stack.peek().getC() != '[') return Integer.toString(index);
                     else {
                         stack.pop();
                     }
@@ -58,7 +58,7 @@ class Patenthneses {
             }
         } catch (Exception e) {
         }
-        return stack.empty() ? "Success" : Integer.toString(stack.peek().getI());
+        return stack.empty() ? "Success" : Integer.toString(stack.peek().getIndex());
     }
 
 

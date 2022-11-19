@@ -4,24 +4,24 @@ import java.util.Scanner;
 //* THe code will ask to put 2 positive integer numbers (e.g. 10 and 35)
 
 public class GreatestCommonDivisor {
-    private static int findMaxDiv (int a, int b){
-        if (a == 0){
-            return b;}
-        if (b == 0){
-            return a;}
-        if (a >= b){
-            return findMaxDiv (a % b, b);}
-        if (a < b){
-            return findMaxDiv (b % a, a);}
+    private static int findMaxDiv (int firstNum, int secondNum){
+        if (firstNum == 0){
+            return secondNum;}
+        if (secondNum == 0){
+            return firstNum;}
+        if (firstNum >= secondNum){
+            return findMaxDiv (firstNum % secondNum, secondNum);}
+        if (firstNum < secondNum){
+            return findMaxDiv (secondNum % firstNum, firstNum);}
         return 1;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
         System.out.println("Please, enter 2 positive integer numbers");
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int divider = findMaxDiv(a, b);
+        int firstNum = scanner.nextInt();
+        int secondNum = scanner.nextInt();
+        int divider = findMaxDiv(firstNum, secondNum);
         System.out.println("The greatest common divider is: " + divider);
     }
 }

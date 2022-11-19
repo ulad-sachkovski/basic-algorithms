@@ -32,12 +32,12 @@ public class MaxSumLadder {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please, put the number of steps in ladder and values for each step");
-        int ArrayVolume = scanner.nextInt();
-        int[] Array = new int[ArrayVolume];
-        for (int i = 0; i < ArrayVolume; i++) {
-            Array[i] = scanner.nextInt();
+        int arrayVolume = scanner.nextInt();
+        int[] array = new int[arrayVolume];
+        for (int i = 0; i < arrayVolume; i++) {
+            array[i] = scanner.nextInt();
         }
-        long coins = MaximumCoins(Array);
+        long coins = MaximumCoins(array);
         System.out.println("The maximum coins are: ");
         System.out.println(coins);
     }
